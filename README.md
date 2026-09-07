@@ -10,6 +10,39 @@ MIT 开源版 · PC 管理端 / 微信小程序 / H5 / FastAPI 后端
 
 面向研发中心产品开发的记录与问题闭环 Monorepo。结构工程师、软件工程师、模具工程师通过微信小程序提交文字、语音、图片或附件；AI 异步完成结构化分析；项目负责人在 PC Web 确认、分派、跟进并关闭记录。
 
+## 界面预览
+
+以下截图来自本项目实际运行页面，使用内置演示账号与种子数据，图表数值用于界面展示，不代表真实业务统计。
+
+### PC 管理端 · 工作台
+
+![PC 管理端工作台](docs/screenshots/pc-dashboard.jpg)
+
+<details>
+<summary>展开查看记录中心与项目管理</summary>
+
+**记录中心**
+
+![PC 记录中心](docs/screenshots/pc-records.jpg)
+
+**项目管理**
+
+![PC 项目管理](docs/screenshots/pc-projects.jpg)
+
+</details>
+
+### 小程序同源 H5 预览
+
+移动端截图来自 Taro 小程序的同源 H5 页面，非微信真机截图；微信端以实际运行效果为准。
+
+<table>
+  <tr><th>记录提交</th><th>我的待办</th></tr>
+  <tr>
+    <td><img src="docs/screenshots/miniapp-record.jpg" alt="移动端记录提交 H5 预览" width="280" /></td>
+    <td><img src="docs/screenshots/miniapp-todos.jpg" alt="移动端我的待办 H5 预览" width="280" /></td>
+  </tr>
+</table>
+
 ## 已实现范围
 
 - FastAPI + SQLAlchemy + Alembic + PostgreSQL，Redis 与 MinIO 基础设施
