@@ -1,0 +1,7 @@
+{
+  "name": "@tarojs/plugin-doctor",
+  "version": "0.0.13",
+  "private": true,
+  "main": "index.js",
+  "typings": "index.d.ts"
+}

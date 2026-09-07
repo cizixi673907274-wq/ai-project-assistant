@@ -1,0 +1,6 @@
+{
+  "name":"@ai-field/admin-web","version":"0.1.0","private":true,"type":"module",
+  "scripts":{"dev":"vite","build":"tsc -b && vite build","typecheck":"tsc --noEmit"},
+  "dependencies":{"@ai-field/api-client":"workspace:*","@ai-field/shared-types":"workspace:*","@ant-design/icons":"^5.6.1","antd":"^5.24.8","echarts":"^5.6.0","echarts-for-react":"^3.0.3","react":"18.3.1","react-dom":"18.3.1","react-router-dom":"^7.5.0"},
+  "devDependencies":{"@types/react":"^18.3.20","@types/react-dom":"^18.3.7","@vitejs/plugin-react":"^4.4.1","typescript":"^5.8.3","vite":"^6.2.5"}
+}

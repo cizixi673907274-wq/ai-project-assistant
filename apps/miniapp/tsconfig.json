@@ -1,0 +1,1 @@
+{"extends":"../../tsconfig.base.json","compilerOptions":{"types":["@tarojs/taro","@types/webpack-env"],"jsx":"react-jsx"},"include":["src","config"]}

@@ -1,0 +1,45 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+!.env.production.example
+*.pem
+*.key
+*.p12
+*.pfx
+# Dependencies and generated output
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+node_modules/
+dist/
+dist-h5/
+.taro/
+.taro4.0/
+*.tsbuildinfo
+coverage/
+# Private records and backups
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+*.bak
+*.bak.*
+*.tar
+*.tar.gz
+*.zip
+minio-data/
+postgres-data/
+generated_exports/
+.local-run/
+*.log
+project.private.config.json
+# OS files
+.DS_Store
+._*
+
+.swc/
+.cache/

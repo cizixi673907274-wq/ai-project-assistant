@@ -1,0 +1,21 @@
+export default defineAppConfig({
+  pages:["pages/login/index","pages/record/index","pages/todos/index","pages/me/index"],
+  window:{
+    navigationStyle:"custom",
+    backgroundTextStyle:"light",
+    navigationBarBackgroundColor:"#F7F9F8",
+    navigationBarTitleText:"AI项目助手",
+    navigationBarTextStyle:"black"
+  },
+  tabBar:{
+    color:"#8B9692",
+    selectedColor:"#169B7A",
+    backgroundColor:"#FFFFFF",
+    borderStyle:"white",
+    list:[
+      {pagePath:"pages/record/index",text:"记录",iconPath:"assets/tabbar/record.png",selectedIconPath:"assets/tabbar/record-active.png"},
+      {pagePath:"pages/todos/index",text:"待处理",iconPath:"assets/tabbar/todos.png",selectedIconPath:"assets/tabbar/todos-active.png"},
+      {pagePath:"pages/me/index",text:"我的",iconPath:"assets/tabbar/me.png",selectedIconPath:"assets/tabbar/me-active.png"}
+    ]
+  }
+});

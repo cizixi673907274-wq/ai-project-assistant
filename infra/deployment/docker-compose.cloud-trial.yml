@@ -1,0 +1,27 @@
+services:
+  api:
+    environment:
+      APP_ENV: staging
+      WECHAT_MOCK: "true"
+      SMS_MOCK: "true"
+      AI_PROVIDER: mock
+      ASR_PROVIDER: ${ASR_PROVIDER:-mock}
+      OCR_PROVIDER: ${OCR_PROVIDER:-mock}
+      MINIO_BUCKET: ai-field-media
+      ALLOW_MOCK_IN_PRODUCTION: "true"
+      CORS_ORIGINS: "http://localhost,http://localhost:5173,http://127.0.0.1:5173"
+  worker:
+    environment:
+      APP_ENV: staging
+      WECHAT_MOCK: "true"
+      SMS_MOCK: "true"
+      AI_PROVIDER: mock
+      ASR_PROVIDER: ${ASR_PROVIDER:-mock}
+      OCR_PROVIDER: ${OCR_PROVIDER:-mock}
+      MINIO_BUCKET: ai-field-media
+      ALLOW_MOCK_IN_PRODUCTION: "true"
+  admin-web:
+    ports:
+      - "80:80"
+    volumes:
+      - ./apps/miniapp/dist-h5:/usr/share/nginx/html/mobile:ro
