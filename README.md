@@ -2,6 +2,8 @@
 
 MIT 开源版 · PC 管理端 / 微信小程序 / H5 / FastAPI 后端
 
+> **使用前请先启动项目。** 本仓库发布的是源码，未提供在线演示站。文中的 `localhost` 指访问者自己的电脑，只有在该电脑上启动本项目后才能使用；直接打开这些地址可能进入电脑上运行的其他应用。
+
 本仓库提供可自部署的应用源码。默认使用 Mock AI 与演示账号，适合本地体验；真实 AI、微信和对象存储需自行配置。GitHub Pages 只能承载静态前端，完整应用需要独立运行后端及数据服务。
 
 原始归档中的生产配置、数据库、历史附件和私人部署资料不属于本仓库。
@@ -36,24 +38,26 @@ infra                部署与种子扩展目录
 docs                 架构与接口扩展目录
 ```
 
-## 一键启动（Docker）
+## 下载并在本机启动（Docker）
 
 要求 Docker Desktop 与 Docker Compose v2。
 
 ```bash
+git clone https://github.com/cizixi673907274-wq/ai-project-assistant.git
+cd ai-project-assistant
 cp .env.example .env
 docker compose up --build
 ```
 
 开发 Compose 的端口仅绑定本机回环地址。真机联调需自行调整绑定、CORS 与 API 地址，并限制访问范围。
 
-服务地址：
+确认上述命令启动成功、容器健康后，在同一台电脑访问以下地址（本地入口，不是线上链接）：
 
-- PC Web：<http://localhost:5173>
-- API：<http://localhost:8000>
-- Swagger：<http://localhost:8000/docs>
-- ReDoc：<http://localhost:8000/redoc>
-- MinIO Console：<http://localhost:9001>（`minioadmin` / `minioadmin`）
+- PC Web：`http://localhost:5173`
+- API：`http://localhost:8000`
+- Swagger：`http://localhost:8000/docs`
+- ReDoc：`http://localhost:8000/redoc`
+- MinIO Console：`http://localhost:9001`（`minioadmin` / `minioadmin`）
 - PostgreSQL：`localhost:5432`
 - Redis：`localhost:6379`
 
@@ -137,7 +141,11 @@ pnpm build
 
 ### 本地服务排查
 
-如果你看到 5173/8000 无法访问，通常是服务未启动。优先执行：
+如果 `localhost:5173` 显示其他应用，说明访问到了该端口上的其他服务，不能据此判断本项目已启动。Docker 遇到端口占用会报错；Vite 开发服务也可能自动换用其他端口，应以终端输出的实际地址为准。
+
+Docker 管理端端口冲突时，可将 `docker-compose.yml` 中 `admin-web` 的 `127.0.0.1:5173:80` 改为一个未占用的端口，例如 `127.0.0.1:5183:80`，重新启动后访问 `http://localhost:5183`。不要停止不属于本项目的服务。
+
+如果 5173/8000 无法访问，先检查启动日志。在已安装依赖且端口可用的情况下，可运行：
 
 ```bash
 make up-local
